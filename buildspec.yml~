@@ -5,10 +5,10 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - $AWS_DEFAULT_REGION with a value of region-ID
-      - $AWS_ACCOUNT_ID with a value of account-ID
-      - $IMAGE_TAG with a value of Latest
-      - $IMAGE_REPO_NAME with a value of Amazon-ECR-repo-name
+      - AWS_DEFAULT_REGION=us-west-2 
+      - AWS_ACCOUNT_ID=995646271469
+      - IMAGE_TAG=latest
+      - IMAGE_REPO_NAME=csta-tooling
   build:
     commands:
       - echo Build started on `date`
